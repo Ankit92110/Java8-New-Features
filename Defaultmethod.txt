@@ -1,0 +1,91 @@
+
+Related Methods:
+----------------------------------------------------------------
+1.8 Version : default methods + static methods
+1.9 Version :private methods
+
+Variables:
+----------------------------------------------------------------
+
+public static final 
+
+no inhancement made for variables 
+
+________________________________________________________________
+
+Default Method   | Virtual Extension Method | Defender Method :
+----------------------------------------------------------------
+
+interface Interf{
+   default void m3(){
+     System.out.println("Default Method..");
+   }
+}
+default method
+Without effecting implementation classes if we want to add new method to the
+ interface ====> Default method
+
+interface Left{
+   default void m1(){
+     System.out.println("Left instance m1 method");
+   }
+}
+interface Right{
+   default void m1(){
+     System.out.println("Right instance m1 method");
+   }
+}
+
+class Test implements Left, Right{
+  public void m1(){
+    system.out.println("our own m1 method");
+    //for left m1
+    Left.super.m1();
+    // for right m1
+    Right.super.m1();
+  }
+  public static void main(String[] args){
+     Test t=new Test();
+     t.m1();
+  }
+}
+
+----------------------------------------------------------------
+static method in interface
+
+interface interf{
+   public static void m1(){
+     System.out.println("Left instance m1 method");
+   }
+}
+
+class Test implements Interf{
+  
+  public static void main(String[] args){
+    // Ways to call them
+    Interf.m1(); [✔]
+    m1();   [X]
+    Test.m1(); [X]
+    Test t=new Test();
+    t.m1();[X]
+  }
+}
+
+Note : out of above 4 call only first one valid 
+       because interface static method bydefault not 
+       available to implementation classes.
+
+       i.e. interface static method should be called using
+       interface name only.
+
+from 1.8 Version
+
+interface Interf{
+  public static void main(String[] args){
+     System.out.println("Interace main method");
+  }
+}
+
+
+
+
