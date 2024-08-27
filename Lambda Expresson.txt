@@ -153,7 +153,74 @@ Note :
      once reference is available we can call lambda expression any number of Time
 
 
+-----------------------------------------------------------
+Anonymous Inner class Vs Lambda Expressions :
 
+Thread t=new Thread();
+
+Thread t=new Thread(){
+.......
+};
+
+We are writing a class that extends thread class
+Runnable r=new Runnable(){
+  ....
+};
+
+We are writing a class that implement Runnable interface
+Summary : Anonymous class have no name.
+          it's cumpulsary that either it extends a class or  implement the interface
+
+
+interface A{
+   m1();
+} 
+
+creating object of  anonymous class that implements A interface
+A a=new A(){
+   public void m1(){
+   
+   }
+}
+
+we can replace this class with lambda function
+
+A a=()->{
+  ----
+}
+
+But:
+ Suppose If our interface have two methods
+
+interface B{
+   m1();
+   m2();
+}
+
+creating object of  anonymous class that implements A interface
+B b=new B(){
+   public void m1(){
+   
+   }
+    public void m1(){
+   
+   }
+}
+
+under such situation we can not replace anonymous inner class with lambda
+
+Conclusions :
+
+AnyWhere  if lambda expression present we can replace with anonymous inner class
+But reverse is not supported for some cases.
+Due to that anonymous inner class concept are more powerful than lambda expression
+
+Anonymous inner class !=Lambda expression
+
+If anonymous inner class implements an interface that contains single abstract method
+then only we can replace the anonymous inner class with lambda expression.
+
+--------------------------------------------------------------------
 
 
 
