@@ -87,5 +87,26 @@ interface Interf{
 }
 
 
+Why we added the static method inside the interface
+
+suppose there are sum utility:
+                              add(){
+                                --
+                              }
+                              sub(){
+                                --
+                              }
+                              mul(){
+                                --
+                              }
+these we are using not if i will move it inside the class then for use them
+we need to create the object and these utility will associate to that particular object
+
+Since we now 
+Class Vs Interace
+Class is more Costly operator it takes more ram etc.
+it's good to add these utility with interface.
+
+
 
 
