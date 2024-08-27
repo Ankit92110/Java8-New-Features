@@ -1,5 +1,8 @@
 the main objective of Lambda Expression:
-to bring benefits of functional programming into java
+
+1.to bring benefits of functional programming into java.
+2.concise the code 
+
 What is Lambda Expression
 ________________________________________________________________
 
@@ -41,9 +44,26 @@ public int m4(String s) {
 
 s->s.length();
 
+
+Please select valid and invalid lambdas expression
+
+1. n->return n*n;     [X]
+2. n->{return n*n;};  [✔]
+3. n->{return n*n};   [X]
+4. n->n*n;            [✔]
+
+Note that:
+         without curly braces we can't use return keyword
+         With curly braces if want to return some value compulsory we 
+        should use return keyword statement.
+
 ----------------------------------------------------------------
 
 FI ==> Functional Interface
+(which contains single abstract method (SAM))
+ The job of functional Interface to call the lambda expression
+SAM can contains any number of Default method & static methods 
+
 
 Runnable ==>run()
 Comparable===>compareTo() 
@@ -51,8 +71,89 @@ Comparator===>compare()
 Actionlistener===>actionPerform()
 Callable ===>call()
 
-SAM
+________________________________________________________________
+ 
+ FunctionalInterface wrt inheritance
 
-The job of functional Interface to call the lambda expression
+Ex 1:  [✔]
+@FunctionalInterface
+Interface Interf
+{
+  public void m1();
+}
+
+Ex 2:  [✔]
+@FunctionalInterface
+Interface A
+{
+  public void m1();
+}
+
+@FunctionalInterface
+Interface B extends A
+{
+  
+}
+
+Ex 3:  [✔]
+@FunctionalInterface
+Interface A
+{
+  public void m1();
+}
+
+@FunctionalInterface
+Interface B extends A
+{
+   public void m1();
+}
+
+Ex 4:  [X]
+@FunctionalInterface
+Interface A
+{
+  public void m1();
+}
+
+@FunctionalInterface
+Interface B extends A
+{
+   public void m2();
+}
+
+________________________________________________________________
+
+Lambda Expression with Funnctional Interface  :
+
+@FunctionalInterface
+Interface Interf
+{
+  public void m1();
+}
+class Demo implements Interf 
+{
+   public void m1(){
+     System.out.println("Hello");
+   }
+}
+
+class Test {
+   public static void main(String[] args){
+     Demo d=new Demo();
+     d.m1();
+
+     Interf i=()->System.out.println("Hello .....By lambda");
+     i.m1();
+   }
+}
+
+Note :
+     Interf i=()->System.out.println("Hello .....By lambda");
+     Functional Interface can be used to provide the reference for  lambda expression
+     once reference is available we can call lambda expression any number of Time
+
+
+
+
 
 

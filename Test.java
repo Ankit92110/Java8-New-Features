@@ -13,7 +13,9 @@ public class Test {
 }
   */
 
-  /*After Java 8 */
+  /*
+  *After Java 8 
+  */
 
 import java.util.function.Function;
 import java.util.function.Predicate;
