@@ -1,0 +1,58 @@
+the main objective of Lambda Expression:
+to bring benefits of functional programming into java
+What is Lambda Expression
+________________________________________________________________
+
+It is an anonymous function
+      Nameless
+      without return type
+      without modifier
+
+Converts the method to lambda expression
+
+eg1:
+public void m1() {
+  System.out.println("hello");
+
+}
+
+()->System.out.println("hello");
+
+eg2:
+public void m2(int a, int b) {
+  System.out.println(a+b);
+
+}
+
+(a,b)->System.out.println(a+b);
+
+eg3:
+public int  squareit(int n) {
+  return n*n;
+
+}
+  n->n*n;
+
+eg4:
+public int m4(String s) {
+  return s.length()
+
+}
+
+s->s.length();
+
+----------------------------------------------------------------
+
+FI ==> Functional Interface
+
+Runnable ==>run()
+Comparable===>compareTo() 
+Comparator===>compare() 
+Actionlistener===>actionPerform()
+Callable ===>call()
+
+SAM
+
+The job of functional Interface to call the lambda expression
+
+
